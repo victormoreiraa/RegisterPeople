@@ -1,0 +1,38 @@
+﻿
+
+@model Person
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="mt-4 mb-4">Confirmação de Exclusão</h2>
+
+            <div class="card">
+                <div class="card-body">
+                    <p>Você tem certeza de que deseja excluir esta pessoa?</p>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">Nome:</dt>
+                        <dd class="col-sm-8">@Model.Name</dd>
+
+                        <dt class="col-sm-4">Email:</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4">CPF:</dt>
+                        <dd class="col-sm-8">@Model.CPF</dd>
+
+                        <dt class="col-sm-4">Foto:</dt>
+                        <dd class="col-sm-8">@Model.PhotoPath</dd>
+                    </dl>
+
+                    <form asp-action="DeleteConfirmed" asp-route-id="@Model.Id">
+                        <div class="text-right">
+                            <input type="submit" value="Excluir" class="btn btn-danger" />
+                            <a asp-action="Index" class="btn btn-secondary ml-2">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
